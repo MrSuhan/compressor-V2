@@ -50,7 +50,7 @@ async def dl_link(event):
         return await event.reply(f"Added {link} in QUEUE")
     WORKING.append(1)
     s = dt.now()
-    xxx = await event.reply("`Downloading...`")
+    xxx = await event.reply("`Downloading Video`")
     try:
         dl = await fast_download(xxx, link, name)
     except Exception as er:
@@ -82,7 +82,7 @@ async def dl_link(event):
     er = stderr.decode()
     try:
         if er:
-            await xxx.edit(str(er) + "\n\n**ERROR** Contact @danish_00")
+            await xxx.edit(str(er) + "\n\n**ERROR** Contact @Anime_listz")
             WORKING.clear()
             os.remove(dl)
             return os.remove(out)
@@ -91,14 +91,14 @@ async def dl_link(event):
     ees = dt.now()
     ttt = time.time()
     await nn.delete()
-    nnn = await xxx.client.send_message(xxx.chat_id, "`Uploading...`")
+    nnn = await xxx.client.send_message(xxx.chat_id, "`Uploading now`")
     with open(out, "rb") as f:
         ok = await upload_file(
             client=xxx.client,
             file=f,
             name=out,
             progress_callback=lambda d, t: asyncio.get_event_loop().create_task(
-                progress(d, t, nnn, ttt, "uploading..")
+                progress(d, t, nnn, ttt, "uploading now")
             ),
         )
     ds = await xxx.client.send_file(
@@ -116,7 +116,7 @@ async def dl_link(event):
     a1 = await info(dl, xxx)
     a2 = await info(out, xxx)
     dk = await ds.reply(
-        f"Original Size : {hbs(org)}\nCompressed Size : {hbs(com)}\nCompressed Percentage : {per}\n\nMediainfo: [Before]({a1})//[After]({a2})\n\nDownloaded in {x}\nCompressed in {xx}\nUploaded in {xxx}",
+        f"Original Size : {hbs(org)}\nEncoded Size : {hbs(com)}\nCompressed Percentage : {per}\n\nMediainfo: [Before]({a1})//[After]({a2})\n\nDownloaded in {x}\nEncoded in {xx}\nUploaded in {xxx}",
         link_preview=False,
     )
     os.remove(dl)
@@ -143,7 +143,7 @@ async def encod(event):
             oc = event.fwd_from.from_id.user_id
             occ = (await event.client.get_me()).id
             if oc == occ:
-                return await event.reply("`This Video File is already Compressed 😑😑.`")
+                return await event.reply("`This Video File is already Encoded 😑😑.`")
         except BaseException:
             pass
         if WORKING or QUEUE:
@@ -158,7 +158,7 @@ async def encod(event):
             QUEUE.update({doc.id: [name, doc]})
             return await xxx.edit("`Added This File in Queue`")
         WORKING.append(1)
-        xxx = await event.reply("`Downloading...`")
+        xxx = await event.reply("`Downloading video`")
         s = dt.now()
         ttt = time.time()
         dir = f"downloads/"
@@ -222,7 +222,7 @@ async def encod(event):
         er = stderr.decode()
         try:
             if er:
-                await e.edit(str(er) + "\n\n**ERROR** Contact @danish_00")
+                await e.edit(str(er) + "\n\n**ERROR** Contact @Anime_listz")
                 WORKING.clear()
                 os.remove(dl)
                 return os.remove(out)
