@@ -6,5 +6,6 @@ services:
       API_HASH: $API_HASH
       APP_ID: $APP_ID
       BOT_TOKEN: $BOT_TOKEN
+      OWNER: $OWNER
       THUMBNAIL: $THUMBNAIL
       FFMPEG: $FFMPEG
