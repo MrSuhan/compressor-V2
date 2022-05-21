@@ -68,7 +68,7 @@ async def dl_link(event):
     hehe = f"{out};{dl};0"
     wah = code(hehe)
     nn = await xxx.edit(
-        "`Compressing..`",
+        "`Encoding..`",
         buttons=[
             [Button.inline("STATS", data=f"stats{wah}")],
             [Button.inline("CANCEL PROCESS", data=f"skip{wah}")],
@@ -91,7 +91,7 @@ async def dl_link(event):
     ees = dt.now()
     ttt = time.time()
     await nn.delete()
-    nnn = await xxx.client.send_message(xxx.chat_id, "`Uploading now`")
+    nnn = await xxx.client.send_message(xxx.chat_id, "`Uploading in process`")
     with open(out, "rb") as f:
         ok = await upload_file(
             client=xxx.client,
@@ -116,7 +116,7 @@ async def dl_link(event):
     a1 = await info(dl, xxx)
     a2 = await info(out, xxx)
     dk = await ds.reply(
-        f"Original Size : {hbs(org)}\nEncoded Size : {hbs(com)}\nCompressed Percentage : {per}\n\nMediainfo: [Before]({a1})//[After]({a2})\n\nDownloaded in {x}\nEncoded in {xx}\nUploaded in {xxx}",
+        f"Original Size : {hbs(org)}\nEncoded Size : {hbs(com)}\nEncoded Percentage : {per}\n\nMediainfo: [Before]({a1})//[After]({a2})\n\nDownloaded in {x}\nEncoded in {xx}\nUploaded in {xxx}",
         link_preview=False,
     )
     os.remove(dl)
@@ -208,7 +208,7 @@ async def encod(event):
         hehe = f"{out};{dl};0"
         wah = code(hehe)
         nn = await e.edit(
-            "`Compressing..`",
+            "`Encoding..`",
             buttons=[
                 [Button.inline("STATS", data=f"stats{wah}")],
                 [Button.inline("CANCEL PROCESS", data=f"skip{wah}")],
