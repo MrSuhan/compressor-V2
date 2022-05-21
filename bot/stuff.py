@@ -29,7 +29,7 @@ async def up(event):
 
 async def start(event):
     await event.reply(
-        f"Hi `{event.sender.first_name}`\nThis is A CompressorQueue Which Can Encode Videos.\nReduce Size of Videos With Negligible Quality Change\nU can Generate Samples/screenshots too.",
+        f"Hi `{event.sender.first_name}`\nThis is A Video Encoder Which Can Encode Videos in HEVC.\nIt Reduces Size of Videos \nIt will Encode video in 480p quality.",
         buttons=[
             [Button.inline("HELP", data="ihelp")],
             [
@@ -42,20 +42,20 @@ async def start(event):
 
 async def help(event):
     await event.reply(
-        "**🐠 A Quality CompressorQueue**\n\n+This Bot Compress Videos With Negligible Quality Change.\n+Generate Sample Compressed Video\n+Easy to Use\n-Due to Quality Settings Bot Takes Time To Compress.\nSo Be patience Nd Send videos One By One After Completing.\nDont Spam Bot.\n\nJust Forward Video To Get Options"
+        "**🐠 A Video Encoder Bot**\n\n+This Bot will Encode Videos.\n+Easy to Use\n-This bot is Hosted in OKTETO so it will take a lot of time\nSo Be patience and Send videos One By One After Completing.\nDont Spam Bot."
     )
 
 
 async def ihelp(event):
     await event.edit(
-        "**🐠 A Quality CompressorQueue**\n\n+This Bot Compress Videos With Negligible Quality Change.\n+Generate Sample Compressed Video\n+Screenshots Too\n+Easy to Use\n-Due to Quality Settings Bot Takes Time To Compress.\nSo Be patience Nd Send videos One By One After Completing.\nDont Spam Bot.\n\nJust Forward Video To Get Options",
+        "**🐠 A Video Encoder Bot**\n\n+This Bot will Encode Videos.\n+Easy to Use\n-This bot is Hosted in OKTETO so it will take a lot of time\nSo Be patience and Send videos One By One After Completing.\nDont Spam Bot.",
         buttons=[Button.inline("BACK", data="beck")],
     )
 
 
 async def beck(event):
     await event.edit(
-        f"Hi `{event.sender.first_name}`\nThis is A CompressorQueue Which Can Encode Videos.\nReduce Size of Videos With Negligible Quality Change\nU can Generate Samples/screenshots too.",
+        f"Hi `{event.sender.first_name}`\nThis is A Video Encoder Which Can Encode Videos in HEVC.\nIt Reduces Size of Videos \nIt will Encode video in 480p quality.",
         buttons=[
             [Button.inline("HELP", data="ihelp")],
             [
